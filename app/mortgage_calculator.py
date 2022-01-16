@@ -34,33 +34,3 @@ class Mortgage:
             payments.append([i+1, principal, payment])
             principal -= self.amount_borrowed/self.number_of_payments
         return payments
-
-m = Mortgage(0.07/12, # monthly interest rate
-            30*12, #installments
-            250000, #principal
-            3000, #annual tax
-            1500, #annual insurance
-            0.5 #private mortgage insurance pct
-            )
-
-print(m)
-print(f"Monthly payment {m.monthly_payment()}")
-print(m.annual_insurance_amount_calculated())
-print ( f"Annual tax and insurance {m.annual_insurance_amount_calculated()}")
-print ( f"Monthly insurance and tax amount {m.monthly_insurance_and_tax_calculated()}")
-print( f"Montly payment incl tax and interest {m.monthly_payment_w_tax_and_interest()}")
-
-
-m2 = Mortgage(0.065/12, # monthly interest rate
-            30*12, #installments
-            200000, #principal
-            0, #annual tax
-            0, #annual insurance
-            0.0 #private mortgage insurance pct
-            )
-
-print ( f" {m2.monthly_payment_w_tax_and_interest():.2f}")
-
-dept_schedule = m2.dept_schedule()
-for paym in dept_schedule:
-    print ( f" {paym[0]} Principal : {paym[1]:.2f} - Payment :{paym[2]:.2f}")
