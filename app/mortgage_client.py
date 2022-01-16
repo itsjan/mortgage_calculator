@@ -10,7 +10,7 @@ DEFAULT_INTEREST = 6.5
 
 principal: int = int(Prompt.ask(f"Enter principal, default is {DEFAULT_PRINCIPAL}", default=DEFAULT_PRINCIPAL))
 years: int = int(Prompt.ask(f"Enter years, default is {DEFAULT_YEARS}", default=DEFAULT_YEARS))
-annual_interest: int = int(Prompt.ask(f"Enter annual interest, default is {DEFAULT_INTEREST} percent", default=DEFAULT_INTEREST))
+annual_interest: float = float(Prompt.ask(f"Enter annual interest, default is {DEFAULT_INTEREST} percent", default=DEFAULT_INTEREST))
 
 m2 = Mortgage(annual_interest/12, # monthly interest rate
             years*12, #installments
